@@ -1,0 +1,99 @@
+<%= form_for(@asset, html: { class: "form-horizontal", role: "form" }) do |f| %>
+<% if @asset.errors.any? %>
+<div class="alert alert-danger alert-dismissable" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+      class="sr-only">Close</span></button>
+  <h4><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h4>
+
+  <ul>
+    <% @asset.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="form-group">
+  <%= f.label :owner, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.text_field :owner, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :email, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :address, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :rooms, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.number_field :rooms, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :sqmt, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.number_field :sqmt, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :units, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.number_field :units, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :shops, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.number_field :shops, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :parking, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.number_field :parking, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :floors, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.number_field :floors, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :air_cond, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.check_box :air_cond, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :price, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :type, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.select :type, Asset::TYPES.each_with_index.collect { |s, i| [s.titleize, i] }, {:prompt=>true}, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :images, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.file_field :images, class: "form-control" %>
+  </div>
+</div>
+<% end %>

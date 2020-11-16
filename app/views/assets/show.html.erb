@@ -1,0 +1,47 @@
+<div class="page-header">
+  <%= link_to assets_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_asset_path(@asset), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show asset</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Owner:</dt>
+  <dd><%= @asset.owner %></dd>
+
+  <dt>Address:</dt>
+  <dd><%= @asset.address %></dd>
+
+  <dt>Rooms:</dt>
+  <dd><%= @asset.rooms %></dd>
+
+  <dt>Sqmt:</dt>
+  <dd><%= @asset.sqmt %></dd>
+
+  <dt>Units:</dt>
+  <dd><%= @asset.units %></dd>
+
+  <dt>Shops:</dt>
+  <dd><%= @asset.shops %></dd>
+
+  <dt>Parking:</dt>
+  <dd><%= @asset.parking %></dd>
+
+  <dt>Floors:</dt>
+  <dd><%= @asset.floors %></dd>
+
+  <dt>Air cond:</dt>
+  <dd><%= @asset.air_cond %></dd>
+
+  <dt>Price:</dt>
+  <dd><%= @asset.price %></dd>
+
+  <dt>Type:</dt>
+  <dd><%= @asset.type %></dd>
+
+</dl>
